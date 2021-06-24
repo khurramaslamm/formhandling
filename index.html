@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form Handling</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+body{
+	background-color: #E84C3D;
+	width: 100%;
+	font-family: 'Poppins';
+}
+.form-section{
+	box-shadow: 1px 1px 15px #676262;
+	padding: 20px;
+	width: 60%;
+	margin: 20px auto;
+	background-color: white;
+	height: 100%;
+}
+.payment-twg{
+	margin: 0 auto;
+}
+h2{
+	margin-bottom: 30px;
+	text-align: center;
+	color: #033B62;
+	font-family: 'POPPINS';
+	font-weight: 600;
+	font-size: 25px;
+}
+h4{
+	margin-top: 30px;
+	color: #033B62;
+	font-family: 'POPPINS';
+	font-weight: 600;
+	font-size: 18px;
+}
+
+
+.contact-form input, .contact-form select, .contact-form textarea{
+	overflow: hidden;
+	font-family: 'Poppins';
+	font-size: 14px;
+	margin-bottom: 20px;
+	padding: 10px 0px 10px 5px;
+	border-radius: 10px;
+	font-weight: 400;
+	border: none;
+	box-shadow: 1px 1px 4px #cac3c3;
+	-moz-box-shadow: 1px 1px 4px #cac3c3;
+}
+
+input:focus, select:focus, textarea:focus{
+	outline: none;
+	box-shadow: 1px 1px 5px #635656;
+	border: 1px solid #635656;
+}
+
+.contact-form select{
+	width:  100.5%;
+}	
+.contact-form input{
+	width:  100%;
+}
+.contact-form textarea{
+	width:  100%;
+}
+input[type="submit"]{
+	background-color:  #E84C3D;
+	color: white;
+	width:  20%;
+	margin-top: ;
+}
+input[type="submit"]:hover{
+	cursor: pointer;
+	transform: scale(1.02);
+	box-shadow: 1px 1px 5px #635656;
+	transition: 0.3s ease;
+}
+input[type="radio"]{
+	width: auto;
+	box-shadow: none;
+}
+input[type="checkbox"]{
+	width: auto;
+	box-shadow: none;
+}
+
+/*Media Queries*/
+@media (max-width: 576px) {
+	h2{
+		font-size: 15px;
+	}
+	input[type="submit"]{
+		width:  100%;
+	}
+	.form-section{
+		padding: 10px;
+	}
+	.form-section{
+		width: 100%;
+	}	
+}
+@media (max-width: 1024px){
+	.form-section{
+		width: 100%;
+	}	
+}
+</style>
+<body>
+	<section class="payment"> 
+		<div class="container-fluid">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-md-offset-2 col-xs-12 payment-twg">
+				<div class="form-section">
+					<div class="col-md-12">
+						<h2>Link Generator For Payments</h2>
+					</div>
+					<div class="row">
+						<div class="contact-form">
+							<form action="actions.php" method="post">
+								<div class="col-md-6">
+									<input type="number" id="amount" name="amount" min="5" placeholder="Amount" required>
+								</div>
+
+								<div class="col-md-6">
+									<select id="currency" name="currency" required>
+										<option value="usd">USD</option>
+									</select>
+								</div>
+								<div class="col-md-12">
+									<textarea cols="10" rows="2" charswidth="23" id="description" name="description" placeholder="Project Descrition" required></textarea>
+								</div>
+								<div class="col-md-12">
+									<h4>Select Brand</h4>
+									<div class ="col-md-6">
+										<input type="radio" id="twg_co" name="brand" value="thewebgateway.co">
+										<label for="twg_co">thewebgateway.co</label></div>
+
+										<div class ="col-md-6">
+											<input type="radio" id="fmd" name="brand" value="findmedeals.org">
+											<label for="fmd">findmedeals.org</label>
+										</div>
+									</div>
+
+									<div class="col-md-12">
+										<h4>Select Service</h4>
+										<div class ="col-md-6">
+											<input type="checkbox" id="logo_design" name="service_list[]" value="logo_design">
+											<label for="logo_design">Logo Design</label>
+										</div>
+										<div class ="col-md-6">
+											<input type="checkbox" id="website_design" name="service_list[]" value="website_design">
+											<label for="website_design">Website Design</label>
+										</div>
+										<div class ="col-md-6">
+											<input type="checkbox" id="website_devolpment" name="service_list[]" value="website_development">
+											<label for="website_development">Website Development</label>
+										</div>
+										<div class ="col-md-6">
+											<input type="checkbox" id="digital_marketing" name="service_list[]" value="digital_marketing">
+											<label for="digital_marketing">Digital Marketing</label>
+										</div>
+										<div class ="col-md-6">
+											<input type="checkbox" id="seo" name="service_list[]" value="seo">
+											<label for="seo">SEO</label>
+										</div>
+									</div>
+									<div class="col-md-12">
+									<h4>Send Email to Customer</h4>
+									<div class ="col-md-3">
+										<input type="radio" id="yes" name="send_email" value="yes">
+										<label for="yes">Yes</label></div>
+
+										<div class ="col-md-3">
+											<input type="radio" id="no" name="send_email" value="no">
+											<label for="no">No</label>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<input type="submit" name="submit" value="Submit">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>	
+
+		</body>
+		</html>
